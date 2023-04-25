@@ -12,3 +12,7 @@ body.dark-mode{
 .search-bar .form-outline {
     width: 50%;
 }
+
+input, button {
+    border-width: 0px;
+}

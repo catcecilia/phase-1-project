@@ -2,3 +2,13 @@ body.dark-mode{
     background-color: #15202b;
     color: #ffffff;
 }
+
+
+.search-bar{
+    width: auto;
+    margin: 0 auto;
+    display: inline-block;
+}
+.search-bar .form-outline {
+    width: 50%;
+}

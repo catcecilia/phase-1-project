@@ -104,7 +104,9 @@ addEventListener("DOMContentLoaded", e => {
         const divs = document.querySelectorAll('.card');
 
         divs.forEach(div => {
-            console.log(div);
+            if(!div.classList.contains(filtering)){
+                div.classList.toggle('hidden');
+            }
  
         });
     })

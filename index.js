@@ -92,4 +92,17 @@ addEventListener("DOMContentLoaded", e => {
 
         }
     );
+
+
+    //Eventlistener for easter egg, spinning video game emoji
+    const spin = document.getElementById("spin");
+    spin.addEventListener("click", () => {
+        spin.style.animation = 'spin 2s linear';
+        
+
+        //remove animation after it is done
+        setTimeout(()=>{
+            spin.style.animation="none";
+        }, 2000);
+    });
 });

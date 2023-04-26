@@ -3,7 +3,6 @@ addEventListener("DOMContentLoaded", e => {
     const html = document.documentElement;
     const mountingContainer = document.getElementById("mounts");
     var form = document.getElementById("search-form");
-    const divs = document.querySelectorAll('.card');
 
     //Eventlistener for functionality of toggle button
     //Changing CSS styling to light and dark mode
@@ -72,6 +71,7 @@ addEventListener("DOMContentLoaded", e => {
         //Prevent form from reloading after submitting and obtaining search results
         e.preventDefault();
 
+        const divs = document.querySelectorAll('.card');
         let searchTerm = document.getElementById('searching').value;
         searchTerm = searchTerm.toLowerCase(); //make search term(s) lowercase
         
@@ -101,11 +101,12 @@ addEventListener("DOMContentLoaded", e => {
         const filtering = filter.value;
         console.log(filtering);
         
+        const divs = document.querySelectorAll('.card');
+
         divs.forEach(div => {
-            if (div && div.classList.contains(filtering)){
-                div.classList.toggle('hidden');
-            }
-        })
+            console.log(div);
+ 
+        });
     })
 
     //Eventlistener for functionality of the easter egg: spinning video game emoji when clicked

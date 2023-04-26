@@ -9,93 +9,90 @@ addEventListener("DOMContentLoaded", e => {
     //Eventlistener for functionality of toggle button
     //Changing CSS styling to light and dark mode
     const toggleBtn = document.getElementById("toggle-mode-btn");
-    toggleBtn.addEventListener('click', () => { 
-        if (html.getAttribute('data-bs-theme') == 'dark') {
-            html.setAttribute('data-bs-theme','light');
-            toggleBtn.innerText = "Dark Mode";
-        }
-        else {
-            html.setAttribute('data-bs-theme','dark');
-            toggleBtn.innerText = "Light Mode";
-        }
-    });
-
+    toggleBtn.addEventListener("click", () => {
+        html.setAttribute(
+          "data-bs-theme",
+          html.getAttribute("data-bs-theme") === "dark" ? "light" : "dark"
+        );
+        toggleBtn.innerText =
+          html.getAttribute("data-bs-theme") === "dark" ? "Light Mode" : "Dark Mode";
+      });
+    
 
     //Display all items in API to div with id "mounts"
     fetch("https://ffxivcollect.com/api/mounts")
-    .then(res => res.json())
-    .then(objects => {
-        const arr = Array.from(objects.results);
-        arr.forEach(item => {
-            const divCard = document.createElement("div");
-            const name = document.createElement("h2");
-            const description = document.createElement("p");
-            const image = document.createElement("img");
-            const saveButton = document.createElement("button");
-            const ownedButton = document.createElement("button");
-            divCard.className = "card";
-            name.innerText = item.name;
-            divCard.appendChild(name);
-            image.src=item.image;
-            divCard.appendChild(image);
-            description.innerText=item.description;
-            divCard.appendChild(description);
-            saveButton.textContent = "❤️";
-            saveButton.id = item.id;
-            saveButton.className = "btn btn-outline-danger";
-            divCard.appendChild(saveButton);
+    .then((res) => res.json())
+    .then((data) => {
+      const arr = Array.from(data.results);
+      arr.forEach((item) => {
+        const divCard = document.createElement("div");
+        const name = document.createElement("h2");
+        const description = document.createElement("p");
+        const image = document.createElement("img");
+        const saveButton = document.createElement("button");
+        const ownedButton = document.createElement("button");
 
-            //Eventlistener for functionality of like button
-            saveButton.addEventListener("click", ()=>{
-                saveButton.classList.toggle('btn-danger');
-                divCard.classList.toggle("liked");
-            });
+        divCard.className = "card";
 
-            ownedButton.textContent = "Owned";
-            ownedButton.className = "btn"
-            ownedButton.id = item.id;
-            divCard.appendChild(ownedButton);
+        name.innerText = item.name;
+        divCard.appendChild(name);
 
-            //Eventlistener for functionality of like button
-            ownedButton.addEventListener("click", ()=>{
-                divCard.classList.toggle('owned');
-                ownedButton.classList.toggle('btn-secondary');
-            });
-            mountingContainer.appendChild(divCard);
+        image.src = item.image;
+        divCard.appendChild(image);
+
+        description.innerText = item.description;
+        divCard.appendChild(description);
+
+        saveButton.textContent = "❤️";
+        saveButton.id = item.id;
+        saveButton.className = "btn btn-outline-danger";
+        divCard.appendChild(saveButton);
+
+        // Event listener for like button functionality
+        saveButton.addEventListener("click", () => {
+          saveButton.classList.toggle("btn-danger");
+          divCard.classList.toggle("liked");
         });
+
+        ownedButton.textContent = "Owned";
+        ownedButton.className = "btn";
+        ownedButton.id = item.id;
+        divCard.appendChild(ownedButton);
+
+        // Event listener for owned button functionality
+        ownedButton.addEventListener("click", () => {
+          divCard.classList.toggle("owned");
+          ownedButton.classList.toggle("btn-secondary");
+        });
+
+        mountingContainer.appendChild(divCard);
+      });
     })
-    .catch(error => console.log(error));
+    .catch((error) => console.log(error));
 
-
-
-    //Event listener for functionality of search funciton
-
-    form.addEventListener("submit", e => {  
+     //Event listener for functionality of search funciton
+     form.addEventListener("submit", (e) => {
         //Prevent form from reloading after submitting and obtaining search results
+
         e.preventDefault();
-
-        const divs = document.querySelectorAll('.card');
-        let searchTerm = document.getElementById('searching').value;
-        searchTerm = searchTerm.toLowerCase().trim(); //make search term(s) lowercase
-        
+    
+        const divs = document.querySelectorAll(".card");
+        const searchTerm = document.getElementById("searching").value.trim().toLowerCase();
+    
         //display all potential results in case prior search was made
-        const hiddenDivs = document.querySelectorAll('.hidden');
-        hiddenDivs.forEach(div => {
-            div.classList.toggle('hidden');
+        const hiddenDivs = document.querySelectorAll(".hidden");
+        hiddenDivs.forEach((div) => {
+          div.classList.toggle("hidden");
         });
-
-        //if search term does not match card item, card item is hidden and search term is not blank
-        if (searchTerm !== ""){
-            divs.forEach(div => {
-                const headerName = div.querySelector('h2').textContent.toLowerCase();
-                if (headerName.indexOf(searchTerm) === -1) {
-                    div.classList.add("hidden");
-                }
-            });
-        }
-
-        }
-    );
+    
+        divs.forEach((div) => {
+          const headerName = div.querySelector("h2").textContent.trim().toLowerCase();
+            //if search term does not match card item, card item is hidden and search term is not blank
+          if (!headerName.includes(searchTerm) && searchTerm !== "") {
+            div.classList.add("hidden");
+          }
+        });
+      });
 
 
     //Function for filtering search results to show only liked OR owned div cards

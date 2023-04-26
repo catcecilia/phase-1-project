@@ -17,13 +17,16 @@
     </nav>
     <h1 class="text-center">FFXIV Mounts</h1>
     <div class="search-container text-center">
-      <form id="search-form">
-        <input type="text" placeholder="Search" name="search" id="searching">
-        <button type="submit" class="btn btn-primary">
-          <i class="bi bi-search"></i>
-        </button>
-        <button id="clear" class="btn btn-outline-primary">Reset</button>
-      </form>
+      <div style="display: flex; align-items: center; justify-content: center;">
+        <form id="search-form">
+          <input type="text" placeholder="Search" name="search" id="searching">
+          <button type="submit" class="btn btn-primary">
+            <i class="bi bi-search"></i>
+          </button>
+        </form>
+        <button id="reset" class="btn btn-outline-primary">Reset</button>
+      </div>
+     
       <div id="filtering">
         <button id="liked" value="liked">Liked</button>
         <button id="owned" value="owned">Owned</button>

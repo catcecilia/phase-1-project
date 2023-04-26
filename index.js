@@ -96,17 +96,6 @@ addEventListener("DOMContentLoaded", e => {
         }
     );
 
-    //Eventlistener for functionality of resetting filtering and search results
-    const clear = document.getElementById("reset");
-    clear.addEventListener("click", () => {
-        const divs = document.querySelectorAll('.card');
-        divs.forEach(div => {
-            //remove hidden class
-            if(div.classList.contains("hidden")){
-                div.classList.remove('hidden');
-            }
-        });
-    });
 
     //Function for filtering search results to show only liked OR owned div cards
     function filter(value){
@@ -142,5 +131,16 @@ addEventListener("DOMContentLoaded", e => {
         setTimeout(()=>{
             spin.style.animation="none";
         }, 2000);
+    });
+
+
+    //Eventlistener for functionality of resetting filtering and search results
+    const clear = document.getElementById("reset");
+    clear.addEventListener("click", () => {
+        const divs = document.querySelectorAll('.hidden');
+        divs.forEach(div => {
+            //remove hidden class
+                div.classList.remove('hidden');
+        });
     });
 });

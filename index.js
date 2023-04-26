@@ -110,7 +110,6 @@ addEventListener("DOMContentLoaded", e => {
 
     //Function for filtering search results to show only liked OR owned div cards
     function filter(value){
-        console.log('poop');
         const divs = document.querySelectorAll('.card');
         divs.forEach(div => {
             //if div doescontain value OR  hidden in class name

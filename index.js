@@ -2,7 +2,9 @@
 addEventListener("DOMContentLoaded", e => {
     const html = document.documentElement;
     const mountingContainer = document.getElementById("mounts");
-    var form = document.getElementById("search-form");
+    const form = document.getElementById("search-form");
+    const likedBtn = document.getElementById("liked");
+    const ownedBtn = document.getElementById("owned");
 
     //Eventlistener for functionality of toggle button
     //Changing CSS styling to light and dark mode
@@ -95,21 +97,30 @@ addEventListener("DOMContentLoaded", e => {
     );
 
 
-    //Eventlistener for filtering search results to show only liked OR owned div cards
-    const filter = document.getElementById('filter');
-    filter.addEventListener('change', () => {
-        const filtering = filter.value;
-        console.log(filtering);
-        
+    //Function for filtering search results to show only liked OR owned div cards
+    function filter(value){
+        console.log('poop');
         const divs = document.querySelectorAll('.card');
-
         divs.forEach(div => {
-            if(!div.classList.contains(filtering)){
-                div.classList.toggle('hidden');
+            //if div doescontain value OR  hidden in class name
+            if (div.classList.contains(value) ||div.classList.contains('hidden')){
+                //do nothing
             }
- 
+            else { //add hidden class
+                div.classList.add('hidden');
+            }
         });
-    })
+    }
+
+    //Eventlistener for functionality of filtering search result for liked div cards
+    likedBtn.addEventListener("click", function(){
+        filter("liked");
+    });
+
+    //Eventlistener for functionality of filtering search result for owned div cars
+    ownedBtn.addEventListener("click", function(){
+        filter("owned");
+    });
 
     //Eventlistener for functionality of the easter egg: spinning video game emoji when clicked
     const spin = document.getElementById("spin");

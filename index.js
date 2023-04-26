@@ -78,7 +78,7 @@ addEventListener("DOMContentLoaded", e => {
 
         e.preventDefault();
     
-        const divs = document.querySelectorAll(".card");
+        const divs = document.querySelectorAll('.card');
         const searchTerm = document.getElementById("searching").value.trim().toLowerCase();
     
         //display all potential results in case prior search was made
@@ -99,8 +99,8 @@ addEventListener("DOMContentLoaded", e => {
 
     //Function for filtering search results to show only liked OR owned div cards
     function filter(value){
-        const divs = document.querySelectorAll('.card');
-        divs.forEach(div => {
+        const allDivs = document.querySelectorAll('.card');
+        allDivs.forEach(div => {
             //if div doescontain value OR  hidden in class name
             if (div.classList.contains(value)||div.classList.contains('hidden')){
                 //do nothing

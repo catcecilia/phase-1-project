@@ -16,3 +16,11 @@ body.dark-mode{
 input, button {
     border-width: 0px;
 }
+
+.card {
+    height: 100%;
+    display: inline-block;
+    width: 18rem;
+    margin: 1em;
+    vertical-align: middle;
+}

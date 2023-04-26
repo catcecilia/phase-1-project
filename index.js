@@ -1,5 +1,5 @@
 const body = document.body;
-const characterContainer = document.getElementById("mounts");
+const mountingContainer = document.getElementById("mounts");
 
 //Toggle button for CSS to light and dark mode
 const toggleBtn = document.getElementById("toggle-mode-btn");
@@ -8,7 +8,7 @@ toggleBtn.addEventListener('click', () => {
 });
 
 
-//display all items in API
+//display all items in API to div with id "mounts"
 fetch("https://ffxivcollect.com/api/mounts")
 .then(res => res.json())
 .then(objects => {
@@ -20,7 +20,7 @@ fetch("https://ffxivcollect.com/api/mounts")
         const image = document.createElement("img");
         const saveButton = document.createElement("button");
         const ownedButton = document.createElement("button");
-        divCard.className = "card col-6 col-sm-4 col-md-3 col-lg-2";
+        divCard.className = "card";
         name.innerText = item.name;
         divCard.appendChild(name);
         image.src=item.image;
@@ -33,6 +33,6 @@ fetch("https://ffxivcollect.com/api/mounts")
         ownedButton.textContent = "Owned";
         ownedButton.id = item.id;
         divCard.appendChild(ownedButton);
-        characterContainer.appendChild(divCard);
+        mountingContainer.appendChild(divCard);
     });
 });

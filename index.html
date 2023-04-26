@@ -19,12 +19,15 @@
     <div class="search-container text-center">
       <form id="search-form">
         <input type="text" placeholder="Search" name="search" id="searching">
-        <button type="submit" class="btn btn-outline-primary">
+        <button type="submit" class="btn btn-primary">
           <i class="bi bi-search"></i>
         </button>
+        <button id="clear" class="btn btn-outline-primary">Reset</button>
       </form>
-      <button id="liked" value="liked">Liked</button>
-      <button id="owned" value="owned">Owned</button>
+      <div id="filtering">
+        <button id="liked" value="liked">Liked</button>
+        <button id="owned" value="owned">Owned</button>
+      </div>
     </div>
     <div id="mounts" class="text-center">
       

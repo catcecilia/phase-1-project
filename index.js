@@ -6,9 +6,11 @@ const toggleBtn = document.getElementById("toggle-mode-btn");
 toggleBtn.addEventListener('click', () => { 
     if (html.getAttribute('data-bs-theme') == 'dark') {
         html.setAttribute('data-bs-theme','light');
+        toggleBtn.innerText = "Dark Mode";
     }
     else {
         html.setAttribute('data-bs-theme','dark');
+        toggleBtn.innerText = "Light Mode";
     }
 });
 

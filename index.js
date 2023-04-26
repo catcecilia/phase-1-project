@@ -3,6 +3,7 @@ addEventListener("DOMContentLoaded", e => {
     const html = document.documentElement;
     const mountingContainer = document.getElementById("mounts");
     var form = document.getElementById("search-form");
+    const divs = document.querySelectorAll('.card');
 
     //Eventlistener for functionality of toggle button
     //Changing CSS styling to light and dark mode
@@ -46,6 +47,7 @@ addEventListener("DOMContentLoaded", e => {
             //Eventlistener for functionality of like button
             saveButton.addEventListener("click", ()=>{
                 saveButton.classList.toggle('btn-danger');
+                divCard.classList.toggle("liked");
             });
 
             ownedButton.textContent = "Owned";
@@ -70,7 +72,6 @@ addEventListener("DOMContentLoaded", e => {
         //Prevent form from reloading after submitting and obtaining search results
         e.preventDefault();
 
-        const divs = document.querySelectorAll('.card');
         let searchTerm = document.getElementById('searching').value;
         searchTerm = searchTerm.toLowerCase(); //make search term(s) lowercase
         
@@ -94,7 +95,20 @@ addEventListener("DOMContentLoaded", e => {
     );
 
 
-    //Eventlistener for easter egg, spinning video game emoji
+    //Eventlistener for filtering search results to show only liked OR owned div cards
+    const filter = document.getElementById('filter');
+    filter.addEventListener('change', () => {
+        const filtering = filter.value;
+        console.log(filtering);
+        
+        divs.forEach(div => {
+            if (div && div.classList.contains(filtering)){
+                div.classList.toggle('hidden');
+            }
+        })
+    })
+
+    //Eventlistener for functionality of the easter egg: spinning video game emoji when clicked
     const spin = document.getElementById("spin");
     spin.addEventListener("click", () => {
         spin.style.animation = 'spin 2s linear';

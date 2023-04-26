@@ -63,7 +63,8 @@ addEventListener("DOMContentLoaded", e => {
             });
             mountingContainer.appendChild(divCard);
         });
-    });
+    })
+    .catch(error => console.log(error));
 
 
 

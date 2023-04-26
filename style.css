@@ -26,3 +26,7 @@ input, button {
     margin: 1em;
     vertical-align: middle;
 }
+
+.owned {
+    opacity: 0.5;
+}

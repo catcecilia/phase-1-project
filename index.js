@@ -36,10 +36,23 @@ fetch("https://ffxivcollect.com/api/mounts")
         saveButton.id = item.id;
         saveButton.className = "btn btn-outline-danger";
         divCard.appendChild(saveButton);
+
+        //add eventlistener where the button changes when 'liked'
+        saveButton.addEventListener("click", ()=>{
+            saveButton.classList.toggle('btn-danger');
+        });
+
         ownedButton.textContent = "Owned";
         ownedButton.className = "btn"
         ownedButton.id = item.id;
         divCard.appendChild(ownedButton);
+
+        //add eventlistener where the divCard changes to 50% transparency when item is 'owned'
+        ownedButton.addEventListener("click", ()=>{
+            divCard.classList.toggle('owned');
+            ownedButton.classList.toggle('btn-secondary');
+        });
         mountingContainer.appendChild(divCard);
     });
 });
+

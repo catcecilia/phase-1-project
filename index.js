@@ -1,10 +1,15 @@
-const body = document.body;
+const html = document.documentElement;
 const mountingContainer = document.getElementById("mounts");
 
 //Toggle button for CSS to light and dark mode
 const toggleBtn = document.getElementById("toggle-mode-btn");
 toggleBtn.addEventListener('click', () => { 
-    body.classList.toggle('dark-mode');
+    if (html.getAttribute('data-bs-theme') == 'dark') {
+        html.setAttribute('data-bs-theme','light');
+    }
+    else {
+        html.setAttribute('data-bs-theme','dark');
+    }
 });
 
 
@@ -29,8 +34,10 @@ fetch("https://ffxivcollect.com/api/mounts")
         divCard.appendChild(description);
         saveButton.textContent = "❤️";
         saveButton.id = item.id;
+        saveButton.className = "btn btn-outline-danger";
         divCard.appendChild(saveButton);
         ownedButton.textContent = "Owned";
+        ownedButton.className = "btn"
         ownedButton.id = item.id;
         divCard.appendChild(ownedButton);
         mountingContainer.appendChild(divCard);

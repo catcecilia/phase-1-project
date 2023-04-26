@@ -3,9 +3,6 @@
     color: #ffffff;
 }
 
-
-
-
 .search-bar{
     width: auto;
     margin: 0 auto;
@@ -34,7 +31,6 @@ input, button {
 .hidden {
     display: none;
 }
-
 
 @keyframes spin {
     0% {

@@ -20,6 +20,8 @@ addEventListener("DOMContentLoaded", e => {
     
 
     //Display all items in API to div with id "mounts"
+
+    //fetch API from https://ffxivcollect.com/api/mounts and create each card item that is appended to div
     fetch("https://ffxivcollect.com/api/mounts")
     .then((res) => res.json())
     .then((data) => {

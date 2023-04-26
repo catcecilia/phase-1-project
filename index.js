@@ -76,7 +76,7 @@ addEventListener("DOMContentLoaded", e => {
 
         const divs = document.querySelectorAll('.card');
         let searchTerm = document.getElementById('searching').value;
-        searchTerm = searchTerm.toLowerCase(); //make search term(s) lowercase
+        searchTerm = searchTerm.toLowerCase().trim(); //make search term(s) lowercase
         
         //display all potential results in case prior search was made
         const hiddenDivs = document.querySelectorAll('.hidden');
@@ -85,13 +85,13 @@ addEventListener("DOMContentLoaded", e => {
         });
 
         //if search term does not match card item, card item is hidden and search term is not blank
-        if (searchTerm.trim() != ""){
+        if (searchTerm !== ""){
             divs.forEach(div => {
                 const headerName = div.querySelector('h2').textContent.toLowerCase();
-                if (headerName.indexOf(searchTerm) == -1){
-                    div.classList.toggle("hidden");
+                if (headerName.indexOf(searchTerm) === -1) {
+                    div.classList.add("hidden");
                 }
-        });
+            });
         }
 
         }
@@ -103,7 +103,7 @@ addEventListener("DOMContentLoaded", e => {
         const divs = document.querySelectorAll('.card');
         divs.forEach(div => {
             //if div doescontain value OR  hidden in class name
-            if (div.classList.contains(value) ||div.classList.contains('hidden')){
+            if (div.classList.contains(value)||div.classList.contains('hidden')){
                 //do nothing
             }
             else { //add hidden class

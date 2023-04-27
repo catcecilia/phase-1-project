@@ -8,10 +8,12 @@
 [https://catcecilia.github.io/phase1project/](https://catcecilia.github.io/phase1project/)
 
 <h2>Project Screenshots:</h2>
+Dark Mode:
 <img src="https://github.com/catcecilia/phase-1-project/blob/main/darkmode.PNG" alt="project-screenshot-darkmode" width="650" height="400">
+Light Mode:
 <img src="https://github.com/catcecilia/phase-1-project/blob/main/lightmode.PNG" alt="project-screenshot-lightmode" width="650" height="400">
 
-<h2>nstallation Steps:</h2>
+<h2>Installation Steps:</h2>
 <p>1. Download repository</p>
 <p>2. Open folder on VisualCode</p>
 <p>3. Open VisualCode to downloaded folder</p>
@@ -26,21 +28,21 @@
 <p>Filter results by clicking on the "liked" or "owned" buttons below the search bar </p>
 
 <h2>Built with:</h2>
-Technologies used in the project:
-*   JavaScript
-*   HTML
-*   CSS
+<p>Technologies used in the project:</p>
+<p>JavaScript</p>
+<p>HTML</p>
+<p>CSS</p>
 
 <h2>Credit to:</h2>
-- [FFXIV Collect API](https://ffxivcollect.com/)
-- [Bootstrap](https://getbootstrap.com/)
-- [Bootstrap Icons](https://icons.getbootstrap.com/)
+<p>- [FFXIV Collect API](https://ffxivcollect.com/)</p>
+<p>- [Bootstrap](https://getbootstrap.com/)</p>
+<p>- [Bootstrap Icons](https://icons.getbootstrap.com/)</p>
 
 <h2>Contributing</h2>
-Pull requests are welcome. For major changes, please open an issue first
+<p>Pull requests are welcome. For major changes, please open an issue first
 to discuss what you would like to change.
 
-Please make sure to update tests as appropriate.
+Please make sure to update tests as appropriate.</p>
 
 <h2>License</h2>
-[MIT](https://choosealicense.com/licenses/mit/)
+<p>[MIT](https://choosealicense.com/licenses/mit/)</p>

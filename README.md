@@ -34,9 +34,9 @@ Light Mode:
 <p>- CSS</p>
 
 <h2>Credit to:</h2>
-<p>- [FFXIV Collect API](https://ffxivcollect.com/)</p>
-<p>- [Bootstrap](https://getbootstrap.com/)</p>
-<p>- [Bootstrap Icons](https://icons.getbootstrap.com/)</p>
+<p>- FFXIV Collect API (https://ffxivcollect.com/)</p>
+<p>- Bootstrap (https://getbootstrap.com/)</p>
+<p>- Bootstrap Icons (https://icons.getbootstrap.com/)</p>
 
 <h2>Contributing</h2>
 <p>Pull requests are welcome. For major changes, please open an issue first
@@ -45,4 +45,4 @@ to discuss what you would like to change.
 Please make sure to update tests as appropriate.</p>
 
 <h2>License</h2>
-<p>[MIT](https://choosealicense.com/licenses/mit/)</p>
+<p>MIT (https://choosealicense.com/licenses/mit/)</p>

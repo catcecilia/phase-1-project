@@ -28,7 +28,6 @@ Light Mode:
 <p>Filter results by clicking on the "liked" or "owned" buttons below the search bar </p>
 
 <h2>Built with:</h2>
-<p>- Technologies used in the project:</p>
 <p>- JavaScript</p>
 <p>- HTML</p>
 <p>- CSS</p>

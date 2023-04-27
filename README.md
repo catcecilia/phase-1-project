@@ -7,13 +7,13 @@
 
 [https://catcecilia.github.io/phase1project/](https://catcecilia.github.io/phase1project/)
 
-<h2>Project Screenshots:</h2>
+<h2>Project Screenshots</h2>
 Dark Mode:
 <img src="https://github.com/catcecilia/phase-1-project/blob/main/darkmode.PNG" alt="project-screenshot-darkmode" width="650" height="400">
 Light Mode:
 <img src="https://github.com/catcecilia/phase-1-project/blob/main/lightmode.PNG" alt="project-screenshot-lightmode" width="650" height="400">
 
-<h2>Installation Steps:</h2>
+<h2>Installation Steps</h2>
 <p>1. Download repository</p>
 <p>2. Open folder on VisualCode</p>
 <p>3. Open VisualCode to downloaded folder</p>
@@ -21,18 +21,18 @@ Light Mode:
 <p>5. Go to local server</p>
 <p>6. Interact with the SPA</p>
 
-<h2>How to Use:</h2>
+<h2>How to Use</h2>
 <p>Click on the 🎮 for a surprise! </p>
 <p>Toggle between light and dark mode by clicking the button</p>
 <p>Click on the ❤️ or "Owned" buttons under each mount to indicate liked or owned</p>
 <p>Filter results by clicking on the "liked" or "owned" buttons below the search bar </p>
 
-<h2>Built with:</h2>
+<h2>Built with</h2>
 <p>- JavaScript</p>
 <p>- HTML</p>
 <p>- CSS</p>
 
-<h2>Credit to:</h2>
+<h2>Credit to</h2>
 <p>- FFXIV Collect API (https://ffxivcollect.com/)</p>
 <p>- Bootstrap (https://getbootstrap.com/)</p>
 <p>- Bootstrap Icons (https://icons.getbootstrap.com/)</p>

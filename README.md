@@ -22,10 +22,12 @@ Light Mode:
 <p>6. Interact with the SPA</p>
 
 <h2>How to Use</h2>
-<p>Click on the 🎮 for a surprise! </p>
+<p>Mouseover the 🎮 for an animation! </p>
 <p>Toggle between light and dark mode by clicking the button</p>
 <p>Click on the ❤️ or "Owned" buttons under each mount to indicate liked or owned</p>
 <p>Filter results by clicking on the "liked" or "owned" buttons below the search bar </p>
+<p>Search for mounts by typing into the search bar</p>
+<p>Search for mounts by pasting characters into the search bar and clicking on the search button</p>
 
 <h2>Built with</h2>
 <p>- JavaScript</p>

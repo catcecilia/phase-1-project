@@ -3,6 +3,7 @@ addEventListener("DOMContentLoaded", e => {
     const html = document.documentElement;
     const mountingContainer = document.getElementById("mounts");
     const form = document.getElementById("search-form");
+    const searchInput = document.getElementById("searching");
     const likedBtn = document.getElementById("liked");
     const ownedBtn = document.getElementById("owned");
 
@@ -72,12 +73,8 @@ addEventListener("DOMContentLoaded", e => {
     })
     .catch((error) => console.log(error));
 
-     //Event listener for functionality of search funciton
-     form.addEventListener("submit", (e) => {
-        //Prevent form from reloading after submitting and obtaining search results
-
-        e.preventDefault();
-    
+      //function for searching
+    function search(){
         const divs = document.querySelectorAll('.card');
         const searchTerm = document.getElementById("searching").value.trim().toLowerCase();
     
@@ -94,8 +91,21 @@ addEventListener("DOMContentLoaded", e => {
             div.classList.add("hidden");
           }
         });
-      });
+      }
 
+     //Event listener for functionality of search funciton when submitting
+     //when user pastes text into search bar, user needs to click submit for results to show
+    form.addEventListener("submit", (e) => {
+      //Prevent form from reloading after submitting and obtaining search results
+
+      e.preventDefault();
+      search();
+    });
+
+
+    //event listener for functionality of search function when typing in search bar
+    //when user types text into search bar, results will show
+    searchInput.addEventListener("keyup", search);
 
     //Function for filtering search results to show only liked OR owned div cards
     function filter(value){
@@ -121,9 +131,9 @@ addEventListener("DOMContentLoaded", e => {
         filter("owned");
     });
 
-    //Eventlistener for functionality of the easter egg: spinning video game emoji when clicked
+    //Eventlistener for functionality of the easter egg: spinning video game emoji when mouseover
     const spin = document.getElementById("spin");
-    spin.addEventListener("click", () => {
+    spin.addEventListener("mouseover", () => {
         spin.style.animation = 'spin 2s linear';
         
 

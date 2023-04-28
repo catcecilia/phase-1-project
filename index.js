@@ -22,12 +22,13 @@ addEventListener("DOMContentLoaded", (e) => {
   });
 
   //Display all items in API to div with id "mounts"
-
   //fetch API from https://ffxivcollect.com/api/mounts and create each card item that is appended to div
   fetch("https://ffxivcollect.com/api/mounts")
     .then((res) => res.json())
     .then((data) => {
       const arr = Array.from(data.results);
+
+      //creation of each card
       arr.forEach((item) => {
         const divCard = document.createElement("div");
         const name = document.createElement("h2");
@@ -103,8 +104,6 @@ addEventListener("DOMContentLoaded", (e) => {
   //Event listener for functionality of search funciton when submitting
   //when user pastes text into search bar, user needs to click submit for results to show
   form.addEventListener("submit", (e) => {
-    //Prevent form from reloading after submitting and obtaining search results
-
     e.preventDefault();
     search();
   });
